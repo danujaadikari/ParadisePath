@@ -3,7 +3,14 @@ import { useLocation, Link } from 'react-router-dom';
 import { XCircle, RefreshCw, Phone, Mail, AlertTriangle } from 'lucide-react';
 
 /**
- * Payment failure page displayed when payment fails or is cancelled
+ * Payment failure page             <a
+              href="mailto:danujaadikari2001@gmail.com"
+              className="flex items-center justify-center space-x-2 bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-lg font-medium transition-colors duration-200"
+            >
+              <Mail className="h-4 w-4" />
+              <span>Email Support</span>
+            </a>
+          </div>ayment fails or is cancelled
  * Features: Error information, retry options, support contact
  */
 const PaymentFailure = () => {
@@ -83,7 +90,7 @@ const PaymentFailure = () => {
             What would you like to do?
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="flex justify-center">
             <Link
               to="/booking"
               state={{ selectedDestination: location.state?.destination, retryBooking: bookingData }}
@@ -91,14 +98,6 @@ const PaymentFailure = () => {
             >
               <RefreshCw className="h-5 w-5" />
               <span>Try Payment Again</span>
-            </Link>
-            
-            <Link
-              to="/contact"
-              className="flex items-center justify-center space-x-3 bg-gray-600 hover:bg-gray-700 text-white p-4 rounded-lg font-semibold transition-colors duration-200"
-            >
-              <Phone className="h-5 w-5" />
-              <span>Contact Support</span>
             </Link>
           </div>
         </div>
