@@ -18,13 +18,6 @@ export const NotificationProvider = ({ children }) => {
     
     setNotifications(prev => [...prev, notification]);
 
-    // Auto-remove notification after duration
-    if (duration > 0) {
-      setTimeout(() => {
-        removeNotification(id);
-      }, duration);
-    }
-
     return id;
   };
 
