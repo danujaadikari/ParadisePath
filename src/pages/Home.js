@@ -290,14 +290,6 @@ const Home = () => {
               <span>Book Your Trip</span>
               <ArrowRight className="h-5 w-5" />
             </Link>
-            
-            <Link
-              to="/contact"
-              className="border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 flex items-center space-x-2"
-            >
-              <Phone className="h-5 w-5" />
-              <span>Call Us Now</span>
-            </Link>
           </div>
           
           <div className="mt-8 flex items-center justify-center space-x-6 text-blue-100">
