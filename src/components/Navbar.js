@@ -33,39 +33,44 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-lg fixed w-full top-0 z-50 transition-colors duration-200">
+    <nav className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-xl fixed w-full top-0 z-50 transition-all duration-300 border-b border-gray-200/20 dark:border-gray-700/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-18">
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center space-x-2 text-xl font-bold text-primary-600 dark:text-primary-400"
+            className="flex items-center space-x-3 text-xl font-bold text-primary-600 dark:text-primary-400 group"
             onClick={closeMenu}
           >
-            <MapPin className="h-6 w-6" />
-            <span>Paradise Path</span>
+            <div className="p-2 bg-primary-100 dark:bg-primary-900/20 rounded-xl group-hover:bg-primary-200 dark:group-hover:bg-primary-800/30 transition-all duration-300 group-hover:scale-110">
+              <MapPin className="h-6 w-6" />
+            </div>
+            <span className="group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors duration-300">Paradise Path</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative group ${
                   isActiveLink(link.path)
-                    ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
+                    ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 shadow-sm'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800/50'
                 }`}
               >
                 {link.label}
+                {!isActiveLink(link.path) && (
+                  <span className="absolute inset-x-2 bottom-1 h-0.5 bg-primary-600 dark:bg-primary-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                )}
               </Link>
             ))}
             
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+              className="p-2 ml-4 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110 bg-gray-50 dark:bg-gray-800/50"
               aria-label="Toggle theme"
             >
               {isDarkMode ? (
@@ -81,7 +86,7 @@ const Navbar = () => {
             {/* Mobile Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+              className="p-2 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 bg-gray-50 dark:bg-gray-800/50"
               aria-label="Toggle theme"
             >
               {isDarkMode ? (
@@ -94,7 +99,7 @@ const Navbar = () => {
             {/* Hamburger Menu Button */}
             <button
               onClick={toggleMenu}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+              className="p-2 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 bg-gray-50 dark:bg-gray-800/50"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
@@ -109,16 +114,16 @@ const Navbar = () => {
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t dark:border-gray-700">
+            <div className="px-4 pt-4 pb-4 space-y-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200/20 dark:border-gray-700/20 shadow-lg">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={closeMenu}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                     isActiveLink(link.path)
-                      ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                      ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 shadow-sm border border-primary-200 dark:border-primary-800'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 hover:scale-[1.02] hover:shadow-sm'
                   }`}
                 >
                   {link.label}
