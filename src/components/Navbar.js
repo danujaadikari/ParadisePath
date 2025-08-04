@@ -32,19 +32,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-xl fixed w-full top-0 z-50 transition-all duration-300 border-b border-gray-200/20 dark:border-gray-700/20">
+    <nav className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-2xl fixed w-full top-0 z-50 transition-all duration-300 border-b border-purple-200/30 dark:border-purple-700/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-18">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center space-x-3 text-xl font-bold text-primary-600 dark:text-primary-400 group"
+            className="flex items-center space-x-3 text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600 group"
             onClick={closeMenu}
           >
-            <div className="p-2 bg-primary-100 dark:bg-primary-900/20 rounded-xl group-hover:bg-primary-200 dark:group-hover:bg-primary-800/30 transition-all duration-300 group-hover:scale-110">
-              <MapPin className="h-6 w-6" />
+            <div className="p-3 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl group-hover:from-purple-600 group-hover:to-cyan-600 transition-all duration-300 group-hover:scale-110 shadow-lg">
+              <MapPin className="h-7 w-7 text-white" />
             </div>
-            <span className="group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors duration-300">Paradise Path</span>
+            <span className="group-hover:scale-105 transition-transform duration-300 text-2xl">Paradise Path</span>
           </Link>
 
           {/* Desktop Navigation */}
