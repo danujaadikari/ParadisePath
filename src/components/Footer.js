@@ -15,8 +15,7 @@ const Footer = () => {
       links: [
         { label: 'Home', path: '/' },
         { label: 'Destinations', path: '/destinations' },
-        { label: 'Booking', path: '/booking' },
-        { label: 'Contact', path: '/contact' }
+        { label: 'Booking', path: '/booking' }
       ]
     },
     {
