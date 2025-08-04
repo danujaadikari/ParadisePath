@@ -13,7 +13,6 @@ import NotificationContainer from './components/NotificationContainer';
 import Home from './pages/Home';
 import Destinations from './pages/Destinations';
 import Booking from './pages/Booking';
-import Contact from './pages/Contact';
 import PaymentSuccess from './pages/PaymentSuccess';
 import PaymentFailure from './pages/PaymentFailure';
 
@@ -34,7 +33,6 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/destinations" element={<Destinations />} />
                   <Route path="/booking" element={<Booking />} />
-                  <Route path="/contact" element={<Contact />} />
                   <Route path="/payment-success" element={<PaymentSuccess />} />
                   <Route path="/payment-failure" element={<PaymentFailure />} />
                 </Routes>
