@@ -14,7 +14,9 @@ const Notification = ({ notification, onRemove }) => {
         onRemove(id);
       }, duration);
 
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+      };
     }
   }, [id, duration, onRemove]);
 
