@@ -71,43 +71,81 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero-bg min-h-screen flex items-center justify-center relative">
-        <div className="absolute inset-0 bg-black opacity-40"></div>
+      <section className="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        {/* Background overlay with gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/60"></div>
+        
+        {/* Animated background patterns */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-secondary-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-accent-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+        </div>
+        
         <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-6 animate-fade-in">
+              <span className="inline-block px-4 py-2 bg-primary-600/20 backdrop-blur-sm border border-primary-400/30 rounded-full text-primary-300 text-sm font-medium mb-6">
+                ✨ Premium Travel Experiences
+              </span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in leading-tight">
               Discover Your Next
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
+              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 animate-gradient-x">
                 Paradise Destination
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-200 animate-slide-up">
+            
+            <p className="text-xl md:text-2xl mb-10 text-gray-200 animate-slide-up max-w-3xl mx-auto leading-relaxed">
               Create unforgettable memories with our carefully curated travel experiences 
-              designed to inspire and transform your journey.
+              designed to inspire and transform your journey into extraordinary adventures.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up">
               <Link
                 to="/destinations"
-                className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="group bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 flex items-center space-x-3 shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-2 hover:scale-105"
               >
                 <span>Explore Destinations</span>
-                <ArrowRight className="h-5 w-5" />
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
               <Link
                 to="/booking"
-                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:-translate-y-1"
+                className="group border-2 border-white/80 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 shadow-xl"
               >
                 Plan Your Trip
               </Link>
             </div>
+            
+            {/* Trust indicators */}
+            <div className="mt-12 animate-fade-in animation-delay-1000">
+              <div className="flex flex-wrap justify-center items-center gap-8 text-white/80">
+                <div className="flex items-center space-x-2">
+                  <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  <span className="font-semibold">4.9/5 Rating</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Users className="h-5 w-5" />
+                  <span className="font-semibold">10K+ Happy Travelers</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Award className="h-5 w-5" />
+                  <span className="font-semibold">15+ Years Experience</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="animate-bounce-slow">
-            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+        {/* Enhanced Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in animation-delay-2000">
+          <div className="flex flex-col items-center space-y-2">
+            <span className="text-white/60 text-sm font-medium">Scroll to explore</span>
+            <div className="animate-bounce-slow">
+              <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center backdrop-blur-sm">
+                <div className="w-1 h-3 bg-white/80 rounded-full mt-2 animate-pulse"></div>
+              </div>
             </div>
           </div>
         </div>
