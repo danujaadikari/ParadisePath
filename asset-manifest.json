@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ParadisePath/static/css/main.c9c3d69c.css",
+    "main.js": "/ParadisePath/static/js/main.137f2d78.js",
+    "index.html": "/ParadisePath/index.html",
+    "main.c9c3d69c.css.map": "/ParadisePath/static/css/main.c9c3d69c.css.map",
+    "main.137f2d78.js.map": "/ParadisePath/static/js/main.137f2d78.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9c3d69c.css",
+    "static/js/main.137f2d78.js"
+  ]
+}
