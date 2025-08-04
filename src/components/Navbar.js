@@ -16,8 +16,7 @@ const Navbar = () => {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/destinations', label: 'Destinations' },
-    { path: '/booking', label: 'Booking' },
-    { path: '/contact', label: 'Contact' }
+    { path: '/booking', label: 'Booking' }
   ];
 
   const toggleMenu = () => {
