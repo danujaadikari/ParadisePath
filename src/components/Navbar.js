@@ -38,10 +38,10 @@ const Navbar = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center space-x-3 text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-orange-600 group"
+            className="flex items-center space-x-3 text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600 group"
             onClick={closeMenu}
           >
-            <div className="p-3 bg-gradient-to-r from-pink-500 to-orange-500 rounded-2xl group-hover:from-pink-600 group-hover:to-orange-600 transition-all duration-300 group-hover:scale-110 shadow-lg">
+            <div className="p-3 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl group-hover:from-green-600 group-hover:to-emerald-700 transition-all duration-300 group-hover:scale-110 shadow-lg">
               <MapPin className="h-7 w-7 text-white" />
             </div>
             <span className="group-hover:scale-105 transition-transform duration-300 text-2xl">Paradise Path</span>
