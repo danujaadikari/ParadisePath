@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ParadisePath/static/css/main.74f80683.css",
-    "main.js": "/ParadisePath/static/js/main.05533988.js",
+    "main.css": "/ParadisePath/static/css/main.a3c81a04.css",
+    "main.js": "/ParadisePath/static/js/main.d01567c3.js",
     "index.html": "/ParadisePath/index.html",
-    "main.74f80683.css.map": "/ParadisePath/static/css/main.74f80683.css.map",
-    "main.05533988.js.map": "/ParadisePath/static/js/main.05533988.js.map"
+    "main.a3c81a04.css.map": "/ParadisePath/static/css/main.a3c81a04.css.map",
+    "main.d01567c3.js.map": "/ParadisePath/static/js/main.d01567c3.js.map"
   },
   "entrypoints": [
-    "static/css/main.74f80683.css",
-    "static/js/main.05533988.js"
+    "static/css/main.a3c81a04.css",
+    "static/js/main.d01567c3.js"
   ]
 }
