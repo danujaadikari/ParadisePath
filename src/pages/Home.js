@@ -213,7 +213,7 @@ const Home = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
               Featured Destinations
             </h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
@@ -258,7 +258,7 @@ const Home = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-teal-600 to-green-600 bg-clip-text text-transparent">
               What Our Travelers Say
             </h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
@@ -309,7 +309,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-600 via-purple-600 to-orange-600 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-green-700 via-emerald-800 to-gray-900 relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl animate-float"></div>
@@ -321,7 +321,7 @@ const Home = () => {
           <div className="animate-fade-in">
             <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
               Ready to Start Your
-              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
+              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-emerald-300">
                 Epic Adventure?
               </span>
             </h2>
