@@ -393,7 +393,7 @@ const Home = () => {
                 Epic Adventure?
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-cyan-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-green-100 mb-12 max-w-3xl mx-auto leading-relaxed">
               Join thousands of satisfied travelers and create memories that will inspire you 
               for generations. Your perfect adventure awaits!
             </p>
