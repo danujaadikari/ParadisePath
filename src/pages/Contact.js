@@ -165,7 +165,7 @@ const Contact = () => {
       icon: Mail,
       title: 'Email Us',
       details: ['danujaadikari2001@gmail.com'],
-      color: 'text-blue-600 dark:text-blue-400'
+      color: 'text-green-600 dark:text-green-400'
     },
     {
       icon: Clock,
@@ -202,7 +202,7 @@ const Contact = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Get In Touch
           </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-green-100 max-w-3xl mx-auto">
             Have questions about your next adventure? We're here to help you plan the perfect trip.
             Contact us today and let's start planning your dream vacation!
           </p>
