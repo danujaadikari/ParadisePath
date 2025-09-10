@@ -6,7 +6,16 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { getFeaturedDestinations } from '../data/destinations';
 
 /**
- * Home page component with hero section, featured destinations, and company info
+ * Hom          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-12 text-green-100 animate-fade-in animation-delay-2000">
+            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-2xl">
+              <Phone className="h-6 w-6 text-green-300" />
+              <span className="font-semibold text-lg">+94 77 123 4567</span>
+            </div>
+            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-2xl">
+              <Mail className="h-6 w-6 text-green-300" />
+              <span className="font-semibold text-lg">info@paradisepath.com</span>
+            </div>
+          </div>ponent with hero section, featured destinations, and company info
  * Features: Animated hero, destination showcase, testimonials, stats
  */
 const Home = () => {
