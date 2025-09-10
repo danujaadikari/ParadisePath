@@ -50,7 +50,7 @@ const DestinationCard = ({ destination, className = '' }) => {
   return (
     <div className={`group bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 border border-gray-200/50 dark:border-gray-700/50 hover:border-purple-300/50 dark:hover:border-purple-600/50 ${className}`}>
       {/* Image Container */}
-      <div className="relative h-56 bg-gradient-to-br from-cyan-200 to-purple-200 dark:from-gray-700 dark:to-gray-800 overflow-hidden">
+      <div className="relative h-56 bg-gradient-to-br from-green-200 to-emerald-200 dark:from-gray-700 dark:to-gray-800 overflow-hidden">
         {!imageLoaded && !imageError && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-8 h-8 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
@@ -99,7 +99,7 @@ const DestinationCard = ({ destination, className = '' }) => {
         </div>
 
         {/* Hover overlay with gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-cyan-500/0 to-pink-500/0 group-hover:from-purple-600/20 group-hover:via-cyan-500/20 group-hover:to-pink-500/20 transition-all duration-700"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-green-500/0 to-emerald-500/0 group-hover:from-purple-600/20 group-hover:via-green-500/20 group-hover:to-emerald-500/20 transition-all duration-700"></div>
       </div>
 
       {/* Content */}
