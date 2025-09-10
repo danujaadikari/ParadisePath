@@ -95,11 +95,11 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
         {/* Enhanced Background overlay with animated gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-purple-900/30 to-cyan-900/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-gray-900/30 to-green-900/40"></div>
         
         {/* Floating elements for visual interest */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
           <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-float animation-delay-2000"></div>
           <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-float animation-delay-4000"></div>
           <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-orange-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse-slow"></div>
@@ -107,7 +107,7 @@ const Home = () => {
         
         {/* Animated background patterns */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
           <div className="absolute top-40 right-10 w-72 h-72 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
           <div className="absolute -bottom-8 left-20 w-72 h-72 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
         </div>
@@ -115,7 +115,7 @@ const Home = () => {
         <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="mb-8 animate-fade-in">
-              <span className="inline-block px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-400/30 rounded-full text-cyan-300 text-sm font-medium mb-6 animate-pulse-slow">
+              <span className="inline-block px-6 py-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-400/30 rounded-full text-green-300 text-sm font-medium mb-6 animate-pulse-slow">
                 ✨ Premium Travel Experiences Since 2008
               </span>
             </div>
