@@ -289,43 +289,89 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.id}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:-translate-y-2 group animate-zoom-in"
-                style={{ animationDelay: `${index * 200}ms` }}
+          {/* Testimonials Carousel */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevTestimonial}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-3 rounded-full shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 hover:scale-110 group"
+            >
+              <ChevronLeft className="h-6 w-6 text-gray-700 dark:text-gray-300 group-hover:text-green-600 dark:group-hover:text-green-400" />
+            </button>
+            
+            <button
+              onClick={nextTestimonial}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-3 rounded-full shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 hover:scale-110 group"
+            >
+              <ChevronRight className="h-6 w-6 text-gray-700 dark:text-gray-300 group-hover:text-green-600 dark:group-hover:text-green-400" />
+            </button>
+
+            {/* Testimonial Cards Slider */}
+            <div className="overflow-hidden rounded-3xl">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
               >
-                <div className="flex items-center mb-6">
-                  <div className="relative">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover mr-4 ring-4 ring-purple-200 dark:ring-purple-800 group-hover:ring-purple-300 dark:group-hover:ring-purple-700 transition-all duration-300"
-                    />
-                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
-                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                {testimonials.map((testimonial, index) => (
+                  <div
+                    key={testimonial.id}
+                    className="w-full flex-shrink-0 px-4"
+                  >
+                    <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-12 rounded-3xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 text-center">
+                      
+                      {/* Profile Image */}
+                      <div className="flex justify-center mb-8">
+                        <div className="relative">
+                          <img
+                            src={testimonial.image}
+                            alt={testimonial.name}
+                            className="w-24 h-24 rounded-full object-cover ring-4 ring-green-200 dark:ring-green-800 shadow-xl"
+                          />
+                          <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+                            <div className="w-2 h-2 bg-white rounded-full"></div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Stars Rating */}
+                      <div className="flex justify-center mb-6">
+                        {renderStars(testimonial.rating)}
+                      </div>
+                      
+                      {/* Comment */}
+                      <p className="text-gray-700 dark:text-gray-300 italic leading-relaxed text-xl mb-8 font-light">
+                        "{testimonial.comment}"
+                      </p>
+                      
+                      {/* Name and Location */}
+                      <div>
+                        <h4 className="font-bold text-gray-900 dark:text-white text-xl mb-2">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-green-600 dark:text-green-400 font-medium">
+                          {testimonial.location}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900 dark:text-white text-lg">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                      {testimonial.location}
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex mb-4">
-                  {renderStars(testimonial.rating)}
-                </div>
-                
-                <p className="text-gray-700 dark:text-gray-300 italic leading-relaxed text-lg">
-                  "{testimonial.comment}"
-                </p>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Dots Navigation */}
+            <div className="flex justify-center mt-8 space-x-3">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToTestimonial(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentTestimonial
+                      ? 'bg-green-600 dark:bg-green-400 scale-125'
+                      : 'bg-gray-300 dark:bg-gray-600 hover:bg-green-400 dark:hover:bg-green-500'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
