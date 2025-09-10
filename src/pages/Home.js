@@ -58,6 +58,27 @@ const Home = () => {
     }
   ];
 
+  // Auto-slide testimonials every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const goToTestimonial = (index) => {
+    setCurrentTestimonial(index);
+  };
+
   const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
