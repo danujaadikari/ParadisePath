@@ -110,7 +110,7 @@ const Destinations = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Explore Amazing Destinations
           </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-green-100 max-w-3xl mx-auto">
             Discover breathtaking locations around the world and find your perfect getaway.
             From pristine beaches to majestic mountains, adventure awaits!
           </p>
