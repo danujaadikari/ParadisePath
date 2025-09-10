@@ -156,7 +156,7 @@ const Home = () => {
                   <span className="font-semibold text-lg">4.9/5 Rating</span>
                 </div>
                 <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-2xl">
-                  <Users className="h-6 w-6 text-cyan-400" />
+                  <Users className="h-6 w-6 text-green-400" />
                   <span className="font-semibold text-lg">10K+ Happy Travelers</span>
                 </div>
                 <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-2xl">
@@ -182,10 +182,10 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-cyan-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative">
+      <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-cyan-200/30 to-purple-200/30 rounded-full filter blur-3xl animate-pulse-slow"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-200/30 to-emerald-200/30 rounded-full filter blur-3xl animate-pulse-slow"></div>
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-purple-200/30 to-pink-200/30 rounded-full filter blur-3xl animate-pulse-slow animation-delay-2000"></div>
         </div>
         
