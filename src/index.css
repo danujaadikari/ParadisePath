@@ -431,5 +431,5 @@ body {
 }
 
 .notification.info {
-  @apply bg-blue-500 text-white;
+  @apply bg-green-500 text-white;
 }
