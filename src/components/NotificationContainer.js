@@ -40,7 +40,7 @@ const Notification = ({ notification, onRemove }) => {
         return 'bg-red-500 border-red-600';
       case 'info':
       default:
-        return 'bg-blue-500 border-blue-600';
+        return 'bg-green-500 border-green-600';
     }
   };
 
