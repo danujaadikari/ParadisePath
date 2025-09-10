@@ -259,10 +259,10 @@ const Contact = () => {
                 </a>
                 <a
                   href="mailto:danujaadikari2001@gmail.com"
-                  className="flex items-center space-x-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-200"
+                  className="flex items-center space-x-3 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors duration-200"
                 >
-                  <Mail className="h-5 w-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-blue-700 dark:text-blue-300 font-medium">
+                  <Mail className="h-5 w-5 text-green-600 dark:text-green-400" />
+                  <span className="text-green-700 dark:text-green-300 font-medium">
                     Send Email
                   </span>
                 </a>
