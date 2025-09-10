@@ -138,7 +138,7 @@ const Booking = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Book Your Dream Trip
           </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-green-100 max-w-3xl mx-auto">
             Fill out the form below to reserve your spot on an unforgettable adventure.
           </p>
         </div>
