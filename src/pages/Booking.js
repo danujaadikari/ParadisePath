@@ -401,14 +401,14 @@ const Booking = () => {
                   </div>
 
                   {/* Payment Info */}
-                  <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mt-6">
+                  <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg mt-6">
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mt-0.5" />
                       <div>
-                        <p className="text-sm font-medium text-blue-900 dark:text-blue-100">
+                        <p className="text-sm font-medium text-green-900 dark:text-green-100">
                           Secure Payment
                         </p>
-                        <p className="text-sm text-blue-700 dark:text-blue-200">
+                        <p className="text-sm text-green-700 dark:text-green-200">
                           Your payment is processed securely through PayHere payment gateway.
                         </p>
                       </div>
