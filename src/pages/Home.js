@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Users, Calendar, Award, MapPin, Phone, Mail } from 'lucide-react';
+import { ArrowRight, Star, Users, Calendar, Award, MapPin, Phone, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
 import DestinationCard from '../components/DestinationCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { getFeaturedDestinations } from '../data/destinations';
@@ -12,6 +12,7 @@ import { getFeaturedDestinations } from '../data/destinations';
 const Home = () => {
   const [featuredDestinations, setFeaturedDestinations] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   useEffect(() => {
     // Simulate loading delay for better UX
