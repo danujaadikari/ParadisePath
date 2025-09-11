@@ -100,17 +100,17 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen smooth-hover">
       {/* Hero Section */}
       <section className="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
         {/* Enhanced Background overlay with animated gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-gray-900/30 to-green-900/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-gray-900/30 to-green-900/40 transition-all duration-700"></div>
         
         {/* Floating elements for visual interest */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-float animation-delay-2000"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-float animation-delay-4000"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-smooth-float"></div>
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-smooth-float animation-delay-2000"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-smooth-float animation-delay-4000"></div>
           <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-orange-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse-slow"></div>
         </div>
         
@@ -215,7 +215,7 @@ const Home = () => {
               return (
                 <div 
                   key={index} 
-                  className="text-center p-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:-translate-y-2 group animate-zoom-in"
+                  className="text-center p-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:-translate-y-2 group animate-smooth-zoom smooth-hover"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
@@ -303,22 +303,22 @@ const Home = () => {
             {/* Navigation Arrows */}
             <button
               onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-3 rounded-full shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 hover:scale-110 group"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-3 rounded-full shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:scale-110 group smooth-hover"
             >
-              <ChevronLeft className="h-6 w-6 text-gray-700 dark:text-gray-300 group-hover:text-green-600 dark:group-hover:text-green-400" />
+              <ChevronLeft className="h-6 w-6 text-gray-700 dark:text-gray-300 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300" />
             </button>
             
             <button
               onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-3 rounded-full shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 hover:scale-110 group"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-3 rounded-full shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:scale-110 group smooth-hover"
             >
-              <ChevronRight className="h-6 w-6 text-gray-700 dark:text-gray-300 group-hover:text-green-600 dark:group-hover:text-green-400" />
+              <ChevronRight className="h-6 w-6 text-gray-700 dark:text-gray-300 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300" />
             </button>
 
             {/* Testimonial Cards Slider */}
             <div className="overflow-hidden rounded-3xl">
               <div 
-                className="flex transition-transform duration-500 ease-in-out"
+                className="flex transition-transform duration-700 ease-out"
                 style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
               >
                 {testimonials.map((testimonial, index) => (
@@ -326,7 +326,7 @@ const Home = () => {
                     key={testimonial.id}
                     className="w-full flex-shrink-0 px-4"
                   >
-                    <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-12 rounded-3xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 text-center">
+                    <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-12 rounded-3xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 text-center smooth-hover">
                       
                       {/* Profile Image */}
                       <div className="flex justify-center mb-8">
