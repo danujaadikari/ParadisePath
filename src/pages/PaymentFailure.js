@@ -200,8 +200,8 @@ const PaymentFailure = () => {
             </a>
             
             <a
-              href="mailto:support@paradisepath.com"
-              className="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg font-medium transition-colors duration-200"
+              href="mailto:danujaadikari2001@gmail.com"
+              className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white p-3 rounded-lg font-medium transition-colors duration-200"
             >
               <Mail className="h-4 w-4" />
               <span>Email Support</span>
