@@ -192,7 +192,7 @@ const PaymentFailure = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <a
-              href="tel:+94771234567"
+              href="tel:0786621310"
               className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white p-3 rounded-lg font-medium transition-colors duration-200"
             >
               <Phone className="h-4 w-4" />
