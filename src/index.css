@@ -174,7 +174,73 @@ body {
   animation: aurora 8s ease-in-out infinite alternate;
 }
 
-/* Enhanced animations */
+/* Enhanced animations for smooth movement */
+@keyframes smoothFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+@keyframes gentleSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes smoothZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes smoothRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth floating animation */
+.animate-smooth-float {
+  animation: smoothFloat 6s ease-in-out infinite;
+}
+
+.animate-gentle-slide {
+  animation: gentleSlide 0.8s ease-out;
+}
+
+.animate-smooth-zoom {
+  animation: smoothZoom 0.6s ease-out;
+}
+
+/* Smooth hover transitions */
+.smooth-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.smooth-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Parallax smooth effect */
+.parallax-smooth {
+  transition: transform 0.1s ease-out;
+}
 @keyframes fade-in {
   from {
     opacity: 0;
