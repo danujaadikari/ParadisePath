@@ -431,7 +431,7 @@ const Home = () => {
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-2xl">
               <Mail className="h-6 w-6 text-green-300" />
-              <span className="font-semibold text-lg">info@paradisepath.com</span>
+              <span className="font-semibold text-lg">danujaadikari2001@gmail.com</span>
             </div>
           </div>
         </div>
