@@ -48,7 +48,7 @@ const DestinationCard = ({ destination, className = '' }) => {
   };
 
   return (
-    <div className={`group bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 border border-gray-200/50 dark:border-gray-700/50 hover:border-purple-300/50 dark:hover:border-purple-600/50 ${className}`}>
+    <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group animate-smooth-zoom smooth-hover border border-gray-200/50 dark:border-gray-700/50">
       {/* Image Container */}
       <div className="relative h-56 bg-gradient-to-br from-green-200 to-emerald-200 dark:from-gray-700 dark:to-gray-800 overflow-hidden">
         {!imageLoaded && !imageError && (
