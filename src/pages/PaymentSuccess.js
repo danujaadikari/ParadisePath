@@ -271,7 +271,7 @@ const PaymentSuccess = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="tel:+94771234567"
+              href="tel:0786621310"
               className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200"
             >
               <Phone className="h-4 w-4" />
