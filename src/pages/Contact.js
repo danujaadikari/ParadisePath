@@ -158,7 +158,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Call Us',
-      details: ['+94 786621310'],
+      details: ['0786621310'],
       color: 'text-green-600 dark:text-green-400'
     },
     {
@@ -249,7 +249,7 @@ const Contact = () => {
               </h3>
               <div className="space-y-3">
                 <a
-                  href="tel:+94786621310"
+                  href="tel:0786621310"
                   className="flex items-center space-x-3 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors duration-200"
                 >
                   <Phone className="h-5 w-5 text-green-600 dark:text-green-400" />
