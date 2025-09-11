@@ -117,7 +117,7 @@ body {
     rgba(55, 65, 81, 0.8) 75%,
     rgba(75, 85, 99, 0.75) 100%
   ),
-  url('/images/sri-lanka-elephant-hero.jpg');
+  url('https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
