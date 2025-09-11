@@ -16,6 +16,21 @@ import Booking from './pages/Booking';
 import PaymentSuccess from './pages/PaymentSuccess';
 import PaymentFailure from './pages/PaymentFailure';
 
+// Smooth scroll to top component
+const ScrollToTop = () => {
+  const location = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [location]);
+
+  return null;
+};
+
 /**
  * Main App component that sets up routing and global providers
  * Includes theme management, booking state, and notifications
@@ -26,9 +41,10 @@ function App() {
       <NotificationProvider>
         <BookingProvider>
           <Router>
-            <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
+            <ScrollToTop />
+            <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-all duration-300 ease-in-out">
               <Navbar />
-              <main className="flex-grow pt-20">
+              <main className="flex-grow pt-20 page-transition">
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/destinations" element={<Destinations />} />
