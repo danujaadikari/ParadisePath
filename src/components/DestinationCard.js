@@ -48,12 +48,12 @@ const DestinationCard = ({ destination, className = '' }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group animate-smooth-zoom smooth-hover border border-gray-200/50 dark:border-gray-700/50">
-      {/* Image Container */}
-      <div className="relative h-56 bg-gradient-to-br from-green-200 to-emerald-200 dark:from-gray-700 dark:to-gray-800 overflow-hidden">
+    <div className="card-enhanced group hover-lift-rotate overflow-hidden animate-staggered-fade-in">
+      {/* Image Container with enhanced loading state */}
+      <div className="relative h-64 bg-gradient-to-br from-green-200 to-emerald-200 dark:from-gray-700 dark:to-gray-800 overflow-hidden">
         {!imageLoaded && !imageError && (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-8 h-8 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
+            <div className="modern-spinner"></div>
           </div>
         )}
         
