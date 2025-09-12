@@ -148,16 +148,16 @@ const Booking = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Booking Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <div className="card-enhanced p-8 animate-staggered-fade-in">
+              <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-8 text-center">
                 Booking Information
               </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Personal Information */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="fullName" className="form-label">
+                  <div className="space-y-2">
+                    <label htmlFor="fullName" className="form-label text-base font-semibold">
                       Full Name *
                     </label>
                     <input
@@ -165,18 +165,19 @@ const Booking = () => {
                       id="fullName"
                       value={bookingData.fullName}
                       onChange={(e) => handleInputChange('fullName', e.target.value)}
-                      className={`form-input ${errors.fullName ? 'border-red-500' : ''}`}
+                      className={`form-input-modern focus-visible-modern ${errors.fullName ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
                       placeholder="Enter your full name"
                     />
                     {errors.fullName && (
-                      <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                        {errors.fullName}
+                      <p className="mt-2 text-sm text-red-600 dark:text-red-400 animate-staggered-fade-in flex items-center space-x-2">
+                        <span className="w-4 h-4 bg-red-500 rounded-full flex-shrink-0"></span>
+                        <span>{errors.fullName}</span>
                       </p>
                     )}
                   </div>
 
-                  <div>
-                    <label htmlFor="email" className="form-label">
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="form-label text-base font-semibold">
                       Email Address *
                     </label>
                     <input
@@ -184,19 +185,20 @@ const Booking = () => {
                       id="email"
                       value={bookingData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
-                      className={`form-input ${errors.email ? 'border-red-500' : ''}`}
+                      className={`form-input-modern focus-visible-modern ${errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
                       placeholder="Enter your email"
                     />
                     {errors.email && (
-                      <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                        {errors.email}
+                      <p className="mt-2 text-sm text-red-600 dark:text-red-400 animate-staggered-fade-in flex items-center space-x-2">
+                        <span className="w-4 h-4 bg-red-500 rounded-full flex-shrink-0"></span>
+                        <span>{errors.email}</span>
                       </p>
                     )}
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="phoneNumber" className="form-label">
+                <div className="space-y-2">
+                  <label htmlFor="phoneNumber" className="form-label text-base font-semibold">
                     Phone Number *
                   </label>
                   <input
