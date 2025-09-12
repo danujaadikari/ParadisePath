@@ -128,52 +128,52 @@ const Home = () => {
         
         <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="mb-8 animate-fade-in">
-              <span className="inline-block px-6 py-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-400/30 rounded-full text-green-300 text-sm font-medium mb-6 animate-pulse-slow">
+            <div className="mb-8 animate-staggered-fade-in">
+              <span className="inline-block px-6 py-3 glass-modern rounded-full text-green-300 text-sm font-medium mb-6 animate-text-shimmer border border-green-400/30">
                 ✨ Premium Travel Experiences Since 2008
               </span>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-black mb-10 animate-fade-in leading-tight">
+            <h1 className="text-6xl md:text-8xl font-black mb-10 animate-staggered-fade-in leading-tight">
               Discover Your Next
-              <span className="block mt-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-500 to-teal-600 animate-gradient-x">
+              <span className="block mt-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-500 to-teal-600 animate-text-shimmer">
                 Paradise Destination
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl mb-12 text-gray-100 animate-slide-up max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-xl md:text-2xl mb-12 text-gray-100 animate-slide-in-bottom max-w-4xl mx-auto leading-relaxed font-light">
               Embark on extraordinary journeys with our carefully curated travel experiences. 
               From pristine beaches to majestic mountains, create memories that will inspire you for a lifetime.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up animation-delay-1000">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-in-bottom animation-delay-1000">
               <Link
                 to="/destinations"
-                className="group bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-12 py-5 rounded-3xl font-bold text-xl transition-all duration-500 flex items-center space-x-3 shadow-2xl hover:shadow-green-500/25 transform hover:-translate-y-3 hover:scale-105 border border-green-500/30"
+                className="btn-modern group flex items-center space-x-3 text-xl px-12 py-5 hover-glow-green"
               >
                 <span>Explore Destinations</span>
                 <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
               <Link
                 to="/booking"
-                className="group border-2 border-white/80 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 px-12 py-5 rounded-3xl font-bold text-xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 shadow-xl hover:shadow-white/25"
+                className="btn-outline-modern group text-xl px-12 py-5 glass-modern border-white/80 text-white hover:text-gray-900"
               >
                 Plan Your Adventure
               </Link>
             </div>
             
-            {/* Enhanced trust indicators */}
-            <div className="mt-16 animate-fade-in animation-delay-2000">
-              <div className="flex flex-wrap justify-center items-center gap-12 text-white/90">
-                <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-2xl">
+            {/* Enhanced trust indicators with glassmorphism */}
+            <div className="mt-16 animate-staggered-fade-in animation-delay-2000">
+              <div className="flex flex-wrap justify-center items-center gap-8 text-white/90">
+                <div className="flex items-center space-x-3 glass-card-enhanced px-6 py-4 rounded-2xl hover-scale-smooth">
                   <Star className="h-6 w-6 fill-yellow-400 text-yellow-400 animate-pulse-slow" />
                   <span className="font-semibold text-lg">4.9/5 Rating</span>
                 </div>
-                <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-2xl">
+                <div className="flex items-center space-x-3 glass-card-enhanced px-6 py-4 rounded-2xl hover-scale-smooth">
                   <Users className="h-6 w-6 text-green-400" />
                   <span className="font-semibold text-lg">10K+ Happy Travelers</span>
                 </div>
-                <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-2xl">
+                <div className="flex items-center space-x-3 glass-card-enhanced px-6 py-4 rounded-2xl hover-scale-smooth">
                   <Award className="h-6 w-6 text-purple-400" />
                   <span className="font-semibold text-lg">15+ Years Experience</span>
                 </div>
