@@ -868,6 +868,54 @@ body {
   }
 }
 
+/* Mobile-first responsive improvements */
+@media (max-width: 640px) {
+  .hero-bg {
+    background-attachment: scroll; /* Fix parallax on mobile */
+    min-height: 100vh;
+  }
+  
+  .glass-modern, .glass-card-enhanced {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  .btn-modern, .btn-outline-modern {
+    padding: 12px 20px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  .form-input-modern {
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-enhanced {
+    margin: 0 16px;
+  }
+  
+  .animate-floating-particle {
+    animation-duration: 6s; /* Reduce complexity on mobile */
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .hover-lift, .hover-lift-rotate {
+    transform: none;
+  }
+  
+  .hover-lift:active, .hover-lift-rotate:active {
+    transform: scale(0.98);
+  }
+  
+  .hover-scale-smooth:active {
+    transform: scale(1.02);
+  }
+}
+
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .btn-modern, .btn-outline-modern {
@@ -878,5 +926,29 @@ body {
   .glass-modern, .glass-card-enhanced {
     background: rgba(255, 255, 255, 0.9);
     border-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .dark .glass-modern, .dark .glass-card-enhanced {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Improved focus styles for better accessibility */
+.btn-modern:focus-visible, .btn-outline-modern:focus-visible {
+  outline: 3px solid #22c55e;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .hero-bg {
+    background: none;
+    color: black;
+  }
+  
+  .glass-modern, .glass-card-enhanced {
+    background: white;
+    border: 1px solid black;
   }
 }
