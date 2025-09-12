@@ -326,10 +326,10 @@ const Booking = () => {
             </div>
           </div>
 
-          {/* Booking Summary */}
+          {/* Enhanced Booking Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sticky top-24">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
+            <div className="card-enhanced p-8 sticky top-24 animate-staggered-fade-in">
+              <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-8 text-center">
                 Booking Summary
               </h3>
 
