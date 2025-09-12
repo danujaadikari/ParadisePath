@@ -174,9 +174,9 @@ const DestinationCard = ({ destination, className = '' }) => {
         </div>
 
         {/* Enhanced Price and Book Button */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
           <div className="flex flex-col">
-            <span className="text-3xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+            <span className="text-3xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent animate-text-shimmer">
               {formatCurrency(destination.price)}
             </span>
             <span className="text-sm text-gray-600 dark:text-gray-400 font-semibold">
@@ -187,7 +187,7 @@ const DestinationCard = ({ destination, className = '' }) => {
           <Link
             to="/booking"
             state={{ selectedDestination: destination }}
-            className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 rounded-2xl font-bold transition-all duration-500 flex items-center space-x-3 group shadow-xl hover:shadow-2xl hover:scale-105 border border-green-500/30"
+            className="btn-modern group flex items-center space-x-3 text-lg px-8 py-4 hover-glow-green relative overflow-hidden"
           >
             <span>Book Adventure</span>
             <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
