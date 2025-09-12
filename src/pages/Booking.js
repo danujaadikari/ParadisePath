@@ -308,11 +308,11 @@ const Booking = () => {
                 <button
                   type="submit"
                   disabled={isLoading || paymentProcessing}
-                  className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full btn-modern text-lg py-4 px-8 disabled:opacity-50 disabled:cursor-not-allowed hover-glow-green flex items-center justify-center space-x-3"
                 >
                   {isLoading || paymentProcessing ? (
                     <>
-                      <LoadingSpinner size="small" color="white" />
+                      <div className="modern-spinner w-5 h-5"></div>
                       <span>Processing...</span>
                     </>
                   ) : (
