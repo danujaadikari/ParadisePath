@@ -47,35 +47,35 @@ const Navbar = () => {
             <span className="group-hover:scale-105 transition-transform duration-300 text-2xl">Paradise Path</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          {/* Desktop Navigation with enhanced styling */}
+          <div className="hidden md:flex items-center space-x-2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative group ${
+                className={`px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 relative group focus-visible-modern ${
                   isActiveLink(link.path)
-                    ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 shadow-sm'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800/50'
+                    ? 'text-white bg-gradient-to-r from-green-600 to-emerald-600 shadow-lg'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 glass-modern'
                 }`}
               >
                 {link.label}
                 {!isActiveLink(link.path) && (
-                  <span className="absolute inset-x-2 bottom-1 h-0.5 bg-primary-600 dark:bg-primary-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                  <span className="absolute inset-x-3 bottom-1 h-0.5 bg-gradient-to-r from-green-600 to-emerald-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                 )}
               </Link>
             ))}
             
-            {/* Theme Toggle */}
+            {/* Enhanced Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 ml-4 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110 bg-gray-50 dark:bg-gray-800/50"
+              className="p-3 ml-4 rounded-2xl text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-300 hover:scale-110 glass-modern group focus-visible-modern"
               aria-label="Toggle theme"
             >
               {isDarkMode ? (
-                <Sun className="h-5 w-5" />
+                <Sun className="h-6 w-6 group-hover:text-yellow-500 transition-colors duration-300" />
               ) : (
-                <Moon className="h-5 w-5" />
+                <Moon className="h-6 w-6 group-hover:text-blue-500 transition-colors duration-300" />
               )}
             </button>
           </div>
