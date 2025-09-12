@@ -122,25 +122,4 @@ const LoadingSpinner = ({
       )}
     </div>
   );
-}; 
-              color === 'secondary' ? 'border-t-secondary-400 dark:border-t-secondary-300' : 
-              color === 'white' ? 'border-t-gray-300' : 'border-t-gray-500'}
-            border-t-transparent 
-            rounded-full 
-            animate-spin
-            animation-delay-75
-          `}
-          style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}
-        />
-      </div>
-      
-      {text && (
-        <p className="mt-4 text-sm font-medium text-gray-600 dark:text-gray-400 animate-pulse">
-          {text}
-        </p>
-      )}
-    </div>
-  );
-};
-
 export default LoadingSpinner;
