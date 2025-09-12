@@ -73,40 +73,41 @@ const DestinationCard = ({ destination, className = '' }) => {
           </div>
         )}
 
-        {/* Enhanced overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+        {/* Enhanced overlay gradient with micro-interactions */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-40 group-hover:opacity-70 transition-all duration-500"></div>
 
-        {/* Floating elements for visual interest */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="absolute top-4 left-4 w-16 h-16 bg-white/20 rounded-full blur-lg animate-pulse-slow"></div>
-          <div className="absolute bottom-4 right-4 w-12 h-12 bg-purple-400/30 rounded-full blur-lg animate-pulse-slow animation-delay-1000"></div>
+        {/* Floating particles for visual interest */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+          <div className="absolute top-6 left-6 w-3 h-3 bg-white/40 rounded-full animate-floating-particle"></div>
+          <div className="absolute top-12 right-8 w-2 h-2 bg-green-400/60 rounded-full animate-floating-particle animation-delay-1000"></div>
+          <div className="absolute bottom-8 left-8 w-4 h-4 bg-purple-400/50 rounded-full animate-floating-particle animation-delay-2000"></div>
         </div>
 
-        {/* Featured Badge */}
+        {/* Featured Badge with enhanced styling */}
         {destination.featured && (
-          <div className="absolute top-4 left-4 animate-float">
-            <span className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm border border-green-400/50">
+          <div className="absolute top-6 left-6 animate-staggered-fade-in">
+            <span className="glass-modern bg-gradient-to-r from-green-500/80 to-emerald-600/80 text-white px-4 py-2.5 rounded-full text-xs font-bold shadow-2xl border border-green-400/30 hover-glow-green">
               ⭐ Featured Destination
             </span>
           </div>
         )}
 
-        {/* Category Badge */}
-        <div className="absolute top-4 right-4 animate-slide-in-right">
-          <span className="bg-black/70 backdrop-blur-md text-white px-4 py-2 rounded-full text-xs font-semibold capitalize shadow-lg border border-white/20">
+        {/* Category Badge with glassmorphism */}
+        <div className="absolute top-6 right-6 animate-slide-in-right">
+          <span className="glass-modern bg-black/50 text-white px-4 py-2.5 rounded-full text-xs font-semibold capitalize shadow-lg border border-white/20 backdrop-blur-lg">
             {destination.category}
           </span>
         </div>
 
-        {/* Hover overlay with gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-green-500/0 to-emerald-500/0 group-hover:from-purple-600/20 group-hover:via-green-500/20 group-hover:to-emerald-500/20 transition-all duration-700"></div>
+        {/* Enhanced hover overlay with animated gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-transparent group-hover:from-green-500/10 group-hover:via-emerald-500/5 group-hover:to-purple-500/10 transition-all duration-700"></div>
       </div>
 
-      {/* Content */}
-      <div className="p-8">
-        {/* Title and Rating */}
-        <div className="flex justify-between items-start mb-5">
-          <h3 className="text-2xl font-black text-gray-900 dark:text-white line-clamp-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-green-600 group-hover:to-emerald-600 transition-all duration-500">
+      {/* Enhanced Content Section */}
+      <div className="p-8 space-y-6">
+        {/* Title and Rating with enhanced typography */}
+        <div className="flex justify-between items-start mb-6">
+          <h3 className="text-2xl font-black text-gray-900 dark:text-white line-clamp-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-green-600 group-hover:to-emerald-600 transition-all duration-500 hover-scale-smooth">
             {destination.name}
           </h3>
         </div>
