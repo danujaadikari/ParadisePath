@@ -106,16 +106,21 @@ const Home = () => {
         {/* Enhanced Background overlay with animated gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-gray-900/30 to-green-900/40 transition-all duration-700"></div>
         
-        {/* Floating elements for visual interest */}
+        {/* Floating particles for visual interest */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-smooth-float"></div>
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-smooth-float animation-delay-2000"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-smooth-float animation-delay-4000"></div>
-          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-orange-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse-slow"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-floating-particle"></div>
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-floating-particle animation-delay-2000"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-floating-particle animation-delay-4000"></div>
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-orange-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-morphing-glow"></div>
+          
+          {/* Additional decorative elements */}
+          <div className="absolute top-10 left-1/2 w-4 h-4 bg-white/30 rounded-full animate-pulse-ring"></div>
+          <div className="absolute bottom-20 right-20 w-6 h-6 bg-green-400/50 rounded-full animate-pulse-ring animation-delay-1000"></div>
+          <div className="absolute top-1/2 left-10 w-3 h-3 bg-purple-400/40 rounded-full animate-pulse-ring animation-delay-2000"></div>
         </div>
         
         {/* Animated background patterns */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-15">
           <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
           <div className="absolute top-40 right-10 w-72 h-72 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
           <div className="absolute -bottom-8 left-20 w-72 h-72 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
