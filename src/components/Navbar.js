@@ -110,20 +110,21 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Enhanced Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-4 pt-4 pb-4 space-y-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200/20 dark:border-gray-700/20 shadow-lg">
-              {navLinks.map((link) => (
+          <div className="md:hidden animate-slide-in-bottom">
+            <div className="px-6 pt-6 pb-6 space-y-3 glass-card-enhanced border-t border-gray-200/30 dark:border-gray-700/30 shadow-2xl">
+              {navLinks.map((link, index) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={closeMenu}
-                  className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                  className={`block px-6 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover-scale-smooth focus-visible-modern ${
                     isActiveLink(link.path)
-                      ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 shadow-sm border border-primary-200 dark:border-primary-800'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 hover:scale-[1.02] hover:shadow-sm'
+                      ? 'text-white bg-gradient-to-r from-green-600 to-emerald-600 shadow-lg'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 glass-modern'
                   }`}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {link.label}
                 </Link>
