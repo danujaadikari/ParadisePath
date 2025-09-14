@@ -10,7 +10,9 @@ import { useAuth } from '../contexts/AuthContext';
  */
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme();
+  const { user, logout, isAuthenticated } = useAuth();
   const location = useLocation();
 
   // Navigation links
@@ -24,8 +26,21 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const toggleUserMenu = () => {
+    setIsUserMenuOpen(!isUserMenuOpen);
+  };
+
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  const closeUserMenu = () => {
+    setIsUserMenuOpen(false);
+  };
+
+  const handleLogout = () => {
+    logout();
+    closeUserMenu();
   };
 
   const isActiveLink = (path) => {
@@ -67,10 +82,56 @@ const Navbar = () => {
               </Link>
             ))}
             
+            {/* User Authentication Section */}
+            <div className="flex items-center space-x-2 ml-4">
+              {isAuthenticated() ? (
+                <div className="relative">
+                  <button
+                    onClick={toggleUserMenu}
+                    className="flex items-center space-x-2 px-4 py-2 rounded-2xl text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-300 glass-modern focus-visible-modern"
+                  >
+                    <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+                      <User className="h-4 w-4 text-white" />
+                    </div>
+                    <span className="hidden lg:block">{user?.fullName?.split(' ')[0] || 'User'}</span>
+                  </button>
+                  
+                  {/* User Dropdown Menu */}
+                  {isUserMenuOpen && (
+                    <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50">
+                      <Link
+                        to="/account"
+                        onClick={closeUserMenu}
+                        className="flex items-center space-x-2 px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                      >
+                        <User className="h-4 w-4" />
+                        <span>My Account</span>
+                      </Link>
+                      <button
+                        onClick={handleLogout}
+                        className="flex items-center space-x-2 w-full px-4 py-3 text-sm text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                      >
+                        <LogOut className="h-4 w-4" />
+                        <span>Sign Out</span>
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  to="/account"
+                  className="flex items-center space-x-2 px-6 py-3 rounded-2xl text-sm font-semibold text-white bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 shadow-lg transition-all duration-300 hover:scale-105 focus-visible-modern"
+                >
+                  <User className="h-4 w-4" />
+                  <span>Sign In</span>
+                </Link>
+              )}
+            </div>
+            
             {/* Enhanced Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-3 ml-4 rounded-2xl text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-300 hover:scale-110 glass-modern group focus-visible-modern"
+              className="p-3 rounded-2xl text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-300 hover:scale-110 glass-modern group focus-visible-modern"
               aria-label="Toggle theme"
             >
               {isDarkMode ? (
