@@ -186,182 +186,232 @@ const Booking = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Booking Form */}
+          {/* Enhanced Booking Form */}
           <div className="lg:col-span-2">
-            <div className="card-enhanced p-8 animate-staggered-fade-in">
-              <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-8 text-center">
-                Booking Information
-              </h2>
+            <div className="glass-card p-8 animate-staggered-fade-in">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-4 text-shimmer">
+                  Booking Information
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"></div>
+              </div>
 
               <form onSubmit={handleSubmit} className="space-y-8">
-                {/* Personal Information */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="fullName" className="form-label text-base font-semibold">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="fullName"
-                      value={bookingData.fullName}
-                      onChange={(e) => handleInputChange('fullName', e.target.value)}
-                      className={`form-input-modern focus-visible-modern ${errors.fullName ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
-                      placeholder="Enter your full name"
-                    />
-                    {errors.fullName && (
-                      <p className="mt-2 text-sm text-red-600 dark:text-red-400 animate-staggered-fade-in flex items-center space-x-2">
-                        <span className="w-4 h-4 bg-red-500 rounded-full flex-shrink-0"></span>
-                        <span>{errors.fullName}</span>
-                      </p>
-                    )}
+                {/* Personal Information Section */}
+                <div className="space-y-6">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center space-x-2">
+                    <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">1</span>
+                    </div>
+                    <span>Personal Information</span>
+                  </h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label htmlFor="fullName" className="form-label text-base font-semibold">
+                        Full Name *
+                      </label>
+                      <div className="relative group">
+                        <input
+                          type="text"
+                          id="fullName"
+                          value={bookingData.fullName}
+                          onChange={(e) => handleInputChange('fullName', e.target.value)}
+                          className={`form-input-glass focus-visible-modern ${errors.fullName ? 'border-red-500 focus:border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
+                          placeholder="Enter your full name"
+                        />
+                        <div className="input-glow-effect"></div>
+                      </div>
+                      {errors.fullName && (
+                        <p className="mt-2 text-sm text-red-600 dark:text-red-400 animate-staggered-fade-in flex items-center space-x-2">
+                          <span className="w-4 h-4 bg-red-500 rounded-full flex-shrink-0 animate-pulse"></span>
+                          <span>{errors.fullName}</span>
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="form-label text-base font-semibold">
+                        Email Address *
+                      </label>
+                      <div className="relative group">
+                        <input
+                          type="email"
+                          id="email"
+                          value={bookingData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                          className={`form-input-glass focus-visible-modern ${errors.email ? 'border-red-500 focus:border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
+                          placeholder="Enter your email"
+                        />
+                        <div className="input-glow-effect"></div>
+                      </div>
+                      {errors.email && (
+                        <p className="mt-2 text-sm text-red-600 dark:text-red-400 animate-staggered-fade-in flex items-center space-x-2">
+                          <span className="w-4 h-4 bg-red-500 rounded-full flex-shrink-0 animate-pulse"></span>
+                          <span>{errors.email}</span>
+                        </p>
+                      )}
+                    </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="email" className="form-label text-base font-semibold">
-                      Email Address *
+                    <label htmlFor="phoneNumber" className="form-label text-base font-semibold">
+                      Phone Number *
                     </label>
-                    <input
-                      type="email"
-                      id="email"
-                      value={bookingData.email}
-                      onChange={(e) => handleInputChange('email', e.target.value)}
-                      className={`form-input-modern focus-visible-modern ${errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
-                      placeholder="Enter your email"
-                    />
-                    {errors.email && (
+                    <div className="relative group">
+                      <input
+                        type="tel"
+                        id="phoneNumber"
+                        value={bookingData.phoneNumber}
+                        onChange={(e) => handleInputChange('phoneNumber', e.target.value)}
+                        className={`form-input-glass focus-visible-modern ${errors.phoneNumber ? 'border-red-500 focus:border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
+                        placeholder="Enter your phone number"
+                      />
+                      <div className="input-glow-effect"></div>
+                    </div>
+                    {errors.phoneNumber && (
                       <p className="mt-2 text-sm text-red-600 dark:text-red-400 animate-staggered-fade-in flex items-center space-x-2">
-                        <span className="w-4 h-4 bg-red-500 rounded-full flex-shrink-0"></span>
-                        <span>{errors.email}</span>
+                        <span className="w-4 h-4 bg-red-500 rounded-full flex-shrink-0 animate-pulse"></span>
+                        <span>{errors.phoneNumber}</span>
                       </p>
                     )}
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="phoneNumber" className="form-label text-base font-semibold">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phoneNumber"
-                    value={bookingData.phoneNumber}
-                    onChange={(e) => handleInputChange('phoneNumber', e.target.value)}
-                    className={`form-input ${errors.phoneNumber ? 'border-red-500' : ''}`}
-                    placeholder="Enter your phone number"
-                  />
-                  {errors.phoneNumber && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                      {errors.phoneNumber}
-                    </p>
-                  )}
-                </div>
-
-                {/* Trip Information */}
-                <div>
-                  <label htmlFor="destination" className="form-label">
-                    Destination *
-                  </label>
-                  <select
-                    id="destination"
-                    value={bookingData.destination}
-                    onChange={(e) => handleDestinationChange(e.target.value)}
-                    className={`form-input ${errors.destination ? 'border-red-500' : ''}`}
-                  >
-                    <option value="">Select a destination</option>
-                    {destinations.map((dest) => (
-                      <option key={dest.id} value={dest.name}>
-                        {dest.name} - {formatCurrency(dest.price)}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.destination && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                      {errors.destination}
-                    </p>
-                  )}
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="startDate" className="form-label">
-                      Start Date *
+                {/* Trip Information Section */}
+                <div className="space-y-6 border-t border-gray-200 dark:border-gray-700 pt-8">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center space-x-2">
+                    <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">2</span>
+                    </div>
+                    <span>Trip Details</span>
+                  </h3>
+                  
+                  <div className="space-y-2">
+                    <label htmlFor="destination" className="form-label text-base font-semibold">
+                      Destination *
                     </label>
-                    <input
-                      type="date"
-                      id="startDate"
-                      value={bookingData.startDate}
-                      onChange={(e) => handleInputChange('startDate', e.target.value)}
-                      min={getTodayDate()}
-                      className={`form-input ${errors.startDate ? 'border-red-500' : ''}`}
-                    />
-                    {errors.startDate && (
-                      <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                        {errors.startDate}
+                    <div className="relative group">
+                      <select
+                        id="destination"
+                        value={bookingData.destination}
+                        onChange={(e) => handleDestinationChange(e.target.value)}
+                        className={`form-input-glass focus-visible-modern ${errors.destination ? 'border-red-500 focus:border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
+                      >
+                        <option value="">Select a destination</option>
+                        {destinations.map((dest) => (
+                          <option key={dest.id} value={dest.name}>
+                            {dest.name} - {formatCurrency(dest.price)}
+                          </option>
+                        ))}
+                      </select>
+                      <div className="input-glow-effect"></div>
+                    </div>
+                    {errors.destination && (
+                      <p className="mt-2 text-sm text-red-600 dark:text-red-400 animate-staggered-fade-in flex items-center space-x-2">
+                        <span className="w-4 h-4 bg-red-500 rounded-full flex-shrink-0 animate-pulse"></span>
+                        <span>{errors.destination}</span>
                       </p>
                     )}
                   </div>
 
-                  <div>
-                    <label htmlFor="endDate" className="form-label">
-                      End Date *
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label htmlFor="startDate" className="form-label text-base font-semibold">
+                        Start Date *
+                      </label>
+                      <div className="relative group">
+                        <input
+                          type="date"
+                          id="startDate"
+                          value={bookingData.startDate}
+                          onChange={(e) => handleInputChange('startDate', e.target.value)}
+                          min={getTodayDate()}
+                          className={`form-input-glass focus-visible-modern ${errors.startDate ? 'border-red-500 focus:border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
+                        />
+                        <div className="input-glow-effect"></div>
+                      </div>
+                      {errors.startDate && (
+                        <p className="mt-2 text-sm text-red-600 dark:text-red-400 animate-staggered-fade-in flex items-center space-x-2">
+                          <span className="w-4 h-4 bg-red-500 rounded-full flex-shrink-0 animate-pulse"></span>
+                          <span>{errors.startDate}</span>
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="space-y-2">
+                      <label htmlFor="endDate" className="form-label text-base font-semibold">
+                        End Date *
+                      </label>
+                      <div className="relative group">
+                        <input
+                          type="date"
+                          id="endDate"
+                          value={bookingData.endDate}
+                          onChange={(e) => handleInputChange('endDate', e.target.value)}
+                          min={bookingData.startDate || getTomorrowDate()}
+                          className={`form-input-glass focus-visible-modern ${errors.endDate ? 'border-red-500 focus:border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
+                        />
+                        <div className="input-glow-effect"></div>
+                      </div>
+                      {errors.endDate && (
+                        <p className="mt-2 text-sm text-red-600 dark:text-red-400 animate-staggered-fade-in flex items-center space-x-2">
+                          <span className="w-4 h-4 bg-red-500 rounded-full flex-shrink-0 animate-pulse"></span>
+                          <span>{errors.endDate}</span>
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="numberOfTravelers" className="form-label text-base font-semibold">
+                      Number of Travelers *
                     </label>
-                    <input
-                      type="date"
-                      id="endDate"
-                      value={bookingData.endDate}
-                      onChange={(e) => handleInputChange('endDate', e.target.value)}
-                      min={bookingData.startDate || getTomorrowDate()}
-                      className={`form-input ${errors.endDate ? 'border-red-500' : ''}`}
-                    />
-                    {errors.endDate && (
-                      <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                        {errors.endDate}
+                    <div className="relative group">
+                      <select
+                        id="numberOfTravelers"
+                        value={bookingData.numberOfTravelers}
+                        onChange={(e) => handleInputChange('numberOfTravelers', parseInt(e.target.value))}
+                        className={`form-input-glass focus-visible-modern ${errors.numberOfTravelers ? 'border-red-500 focus:border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
+                      >
+                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                          <option key={num} value={num}>
+                            {num} {num === 1 ? 'Person' : 'People'}
+                          </option>
+                        ))}
+                      </select>
+                      <div className="input-glow-effect"></div>
+                    </div>
+                    {errors.numberOfTravelers && (
+                      <p className="mt-2 text-sm text-red-600 dark:text-red-400 animate-staggered-fade-in flex items-center space-x-2">
+                        <span className="w-4 h-4 bg-red-500 rounded-full flex-shrink-0 animate-pulse"></span>
+                        <span>{errors.numberOfTravelers}</span>
                       </p>
                     )}
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="numberOfTravelers" className="form-label">
-                    Number of Travelers *
-                  </label>
-                  <select
-                    id="numberOfTravelers"
-                    value={bookingData.numberOfTravelers}
-                    onChange={(e) => handleInputChange('numberOfTravelers', parseInt(e.target.value))}
-                    className={`form-input ${errors.numberOfTravelers ? 'border-red-500' : ''}`}
+                {/* Enhanced Submit Button */}
+                <div className="pt-8 border-t border-gray-200 dark:border-gray-700">
+                  <button
+                    type="submit"
+                    disabled={isLoading || paymentProcessing}
+                    className="w-full btn-glass text-lg py-4 px-8 disabled:opacity-50 disabled:cursor-not-allowed hover-glow-purple flex items-center justify-center space-x-3 group"
                   >
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                      <option key={num} value={num}>
-                        {num} {num === 1 ? 'Person' : 'People'}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.numberOfTravelers && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                      {errors.numberOfTravelers}
-                    </p>
-                  )}
+                    {isLoading || paymentProcessing ? (
+                      <>
+                        <div className="modern-spinner w-6 h-6"></div>
+                        <span>Processing...</span>
+                      </>
+                    ) : (
+                      <>
+                        <CreditCard className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                        <span>Proceed to Secure Payment</span>
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      </>
+                    )}
+                  </button>
                 </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={isLoading || paymentProcessing}
-                  className="w-full btn-modern text-lg py-4 px-8 disabled:opacity-50 disabled:cursor-not-allowed hover-glow-green flex items-center justify-center space-x-3"
-                >
-                  {isLoading || paymentProcessing ? (
-                    <>
-                      <div className="modern-spinner w-5 h-5"></div>
-                      <span>Processing...</span>
-                    </>
-                  ) : (
-                    <>
-                      <CreditCard className="h-5 w-5" />
-                      <span>Proceed to Payment</span>
-                    </>
-                  )}
-                </button>
               </form>
             </div>
           </div>
