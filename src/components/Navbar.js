@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon, MapPin } from 'lucide-react';
+import { Menu, X, Sun, Moon, MapPin, User, LogOut, Settings } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
+import { useAuth } from '../contexts/AuthContext';
 
 /**
  * Navigation component with responsive design and theme toggle
