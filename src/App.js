@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { ThemeProvider } from './contexts/ThemeContext';
 import { BookingProvider } from './contexts/BookingContext';
 import { NotificationProvider } from './contexts/NotificationContext';
+import { AuthProvider } from './contexts/AuthContext';
 
 // Components
 import Navbar from './components/Navbar';
@@ -13,6 +14,7 @@ import NotificationContainer from './components/NotificationContainer';
 import Home from './pages/Home';
 import Destinations from './pages/Destinations';
 import Booking from './pages/Booking';
+import Account from './pages/Account';
 import PaymentSuccess from './pages/PaymentSuccess';
 import PaymentFailure from './pages/PaymentFailure';
 
@@ -39,25 +41,28 @@ function App() {
   return (
     <ThemeProvider>
       <NotificationProvider>
-        <BookingProvider>
-          <Router>
-            <ScrollToTop />
-            <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-all duration-300 ease-in-out">
-              <Navbar />
-              <main className="flex-grow pt-20 page-transition">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/destinations" element={<Destinations />} />
-                  <Route path="/booking" element={<Booking />} />
-                  <Route path="/payment-success" element={<PaymentSuccess />} />
-                  <Route path="/payment-failure" element={<PaymentFailure />} />
-                </Routes>
-              </main>
-              <Footer />
-              <NotificationContainer />
-            </div>
-          </Router>
-        </BookingProvider>
+        <AuthProvider>
+          <BookingProvider>
+            <Router>
+              <ScrollToTop />
+              <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-all duration-300 ease-in-out">
+                <Navbar />
+                <main className="flex-grow pt-20 page-transition">
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/destinations" element={<Destinations />} />
+                    <Route path="/booking" element={<Booking />} />
+                    <Route path="/account" element={<Account />} />
+                    <Route path="/payment-success" element={<PaymentSuccess />} />
+                    <Route path="/payment-failure" element={<PaymentFailure />} />
+                  </Routes>
+                </main>
+                <Footer />
+                <NotificationContainer />
+              </div>
+            </Router>
+          </BookingProvider>
+        </AuthProvider>
       </NotificationProvider>
     </ThemeProvider>
   );
