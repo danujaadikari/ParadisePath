@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon, MapPin, User, LogOut, Settings } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
@@ -14,6 +14,21 @@ const Navbar = () => {
   const { isDarkMode, toggleTheme } = useTheme();
   const { user, logout, isAuthenticated } = useAuth();
   const location = useLocation();
+  const userMenuRef = useRef(null);
+
+  // Close user menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
+        setIsUserMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   // Navigation links
   const navLinks = [
@@ -85,7 +100,7 @@ const Navbar = () => {
             {/* User Authentication Section */}
             <div className="flex items-center space-x-2 ml-4">
               {isAuthenticated() ? (
-                <div className="relative">
+                <div className="relative" ref={userMenuRef}>
                   <button
                     onClick={toggleUserMenu}
                     className="flex items-center space-x-2 px-4 py-2 rounded-2xl text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-300 glass-modern focus-visible-modern"
@@ -98,7 +113,7 @@ const Navbar = () => {
                   
                   {/* User Dropdown Menu */}
                   {isUserMenuOpen && (
-                    <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50">
+                    <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50 animate-staggered-fade-in">
                       <Link
                         to="/account"
                         onClick={closeUserMenu}
@@ -191,6 +206,47 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Mobile Authentication */}
+              <div className="pt-4 border-t border-gray-200/30 dark:border-gray-700/30">
+                {isAuthenticated() ? (
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3 px-6 py-3 text-gray-700 dark:text-gray-300">
+                      <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+                        <User className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-semibold">{user?.fullName}</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">{user?.email}</p>
+                      </div>
+                    </div>
+                    <Link
+                      to="/account"
+                      onClick={closeMenu}
+                      className="block px-6 py-4 rounded-2xl text-lg font-semibold text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 glass-modern transition-all duration-300"
+                    >
+                      My Account
+                    </Link>
+                    <button
+                      onClick={() => {
+                        handleLogout();
+                        closeMenu();
+                      }}
+                      className="block w-full text-left px-6 py-4 rounded-2xl text-lg font-semibold text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all duration-300"
+                    >
+                      Sign Out
+                    </button>
+                  </div>
+                ) : (
+                  <Link
+                    to="/account"
+                    onClick={closeMenu}
+                    className="block px-6 py-4 rounded-2xl text-lg font-semibold text-white bg-gradient-to-r from-green-600 to-emerald-600 shadow-lg transition-all duration-300 text-center"
+                  >
+                    Sign In / Create Account
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         )}
