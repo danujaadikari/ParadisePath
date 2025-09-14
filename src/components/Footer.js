@@ -104,8 +104,7 @@ const Footer = () => {
                   <MapPin className="h-4 w-4 text-primary-400 mt-0.5" />
                 </div>
                 <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                  No 17 Yaya 07 Katiyawa, Eppawal<br />
-                  Anuradhapura, Sri Lanka
+                  No 07 Colombo, Sri Lanka
                 </span>
               </div>
             </div>
