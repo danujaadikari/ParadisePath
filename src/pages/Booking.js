@@ -132,15 +132,55 @@ const Booking = () => {
 
   return (
     <div className="min-h-screen pt-16 bg-gray-50 dark:bg-gray-900">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-secondary-600 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Book Your Dream Trip
-          </h1>
-          <p className="text-xl text-green-100 max-w-3xl mx-auto">
-            Fill out the form below to reserve your spot on an unforgettable adventure.
-          </p>
+      {/* Enhanced Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-purple-600 to-secondary-600 py-20">
+        {/* Floating Particles */}
+        <div className="absolute inset-0">
+          <div className="floating-particles">
+            <div className="particle particle-1"></div>
+            <div className="particle particle-2"></div>
+            <div className="particle particle-3"></div>
+            <div className="particle particle-4"></div>
+            <div className="particle particle-5"></div>
+          </div>
+        </div>
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-black/20"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="glass-card-subtle p-8 max-w-4xl mx-auto backdrop-blur-sm">
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-6 text-shimmer">
+              Book Your Dream Adventure
+            </h1>
+            <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto leading-relaxed">
+              Complete your booking in just a few steps and embark on an unforgettable journey through paradise.
+            </p>
+            
+            {/* Progress Indicators */}
+            <div className="flex items-center justify-center space-x-4 mt-8">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">1</span>
+                </div>
+                <span className="text-white/80 text-sm font-medium">Details</span>
+              </div>
+              <div className="w-12 h-0.5 bg-white/30"></div>
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <span className="text-white/60 font-bold text-sm">2</span>
+                </div>
+                <span className="text-white/60 text-sm font-medium">Payment</span>
+              </div>
+              <div className="w-12 h-0.5 bg-white/20"></div>
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <span className="text-white/60 font-bold text-sm">3</span>
+                </div>
+                <span className="text-white/60 text-sm font-medium">Confirmation</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
