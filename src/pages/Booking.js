@@ -418,94 +418,131 @@ const Booking = () => {
 
           {/* Enhanced Booking Summary */}
           <div className="lg:col-span-1">
-            <div className="card-enhanced p-8 sticky top-24 animate-staggered-fade-in">
-              <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-8 text-center">
-                Booking Summary
-              </h3>
+            <div className="glass-card p-8 sticky top-24 animate-staggered-fade-in">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-4 text-shimmer">
+                  Booking Summary
+                </h3>
+                <div className="w-16 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"></div>
+              </div>
 
-              {bookingData.destination && (
-                <div className="space-y-4">
+              {bookingData.destination ? (
+                <div className="space-y-6">
                   {/* Destination */}
-                  <div className="flex items-start space-x-3">
-                    <MapPin className="h-5 w-5 text-primary-600 dark:text-primary-400 mt-1" />
-                    <div>
-                      <p className="font-medium text-gray-900 dark:text-white">
-                        {bookingData.destination}
-                      </p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Destination
-                      </p>
+                  <div className="glass-card-subtle p-4 hover:scale-105 transition-all duration-300 group">
+                    <div className="flex items-start space-x-4">
+                      <div className="p-3 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 rounded-xl group-hover:from-primary-500/30 group-hover:to-secondary-500/30 transition-all duration-300">
+                        <MapPin className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-bold text-gray-900 dark:text-white text-lg">
+                          {bookingData.destination}
+                        </p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                          Destination
+                        </p>
+                      </div>
                     </div>
                   </div>
 
                   {/* Dates */}
                   {bookingData.startDate && bookingData.endDate && (
-                    <div className="flex items-start space-x-3">
-                      <Calendar className="h-5 w-5 text-primary-600 dark:text-primary-400 mt-1" />
-                      <div>
-                        <p className="font-medium text-gray-900 dark:text-white">
-                          {new Date(bookingData.startDate).toLocaleDateString()} - {new Date(bookingData.endDate).toLocaleDateString()}
-                        </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
-                          {calculateTripDuration()} days
-                        </p>
+                    <div className="glass-card-subtle p-4 hover:scale-105 transition-all duration-300 group">
+                      <div className="flex items-start space-x-4">
+                        <div className="p-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-all duration-300">
+                          <Calendar className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-bold text-gray-900 dark:text-white text-lg">
+                            {new Date(bookingData.startDate).toLocaleDateString()} - {new Date(bookingData.endDate).toLocaleDateString()}
+                          </p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                            {calculateTripDuration()} days adventure
+                          </p>
+                        </div>
                       </div>
                     </div>
                   )}
 
                   {/* Travelers */}
-                  <div className="flex items-start space-x-3">
-                    <Users className="h-5 w-5 text-primary-600 dark:text-primary-400 mt-1" />
-                    <div>
-                      <p className="font-medium text-gray-900 dark:text-white">
-                        {bookingData.numberOfTravelers} {bookingData.numberOfTravelers === 1 ? 'Person' : 'People'}
-                      </p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Travelers
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Price Breakdown */}
-                  <div className="border-t dark:border-gray-700 pt-4 space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600 dark:text-gray-400">
-                        Price per person:
-                      </span>
-                      <span className="font-medium text-gray-900 dark:text-white">
-                        {formatCurrency(getTotalAmount() / bookingData.numberOfTravelers)}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600 dark:text-gray-400">
-                        Number of travelers:
-                      </span>
-                      <span className="font-medium text-gray-900 dark:text-white">
-                        {bookingData.numberOfTravelers}
-                      </span>
-                    </div>
-                    <div className="flex justify-between text-lg font-bold border-t dark:border-gray-700 pt-2">
-                      <span className="text-gray-900 dark:text-white">Total:</span>
-                      <span className="text-primary-600 dark:text-primary-400">
-                        {formatCurrency(getTotalAmount())}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Payment Info */}
-                  <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg mt-6">
-                    <div className="flex items-start space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mt-0.5" />
-                      <div>
-                        <p className="text-sm font-medium text-green-900 dark:text-green-100">
-                          Secure Payment
+                  <div className="glass-card-subtle p-4 hover:scale-105 transition-all duration-300 group">
+                    <div className="flex items-start space-x-4">
+                      <div className="p-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl group-hover:from-green-500/30 group-hover:to-emerald-500/30 transition-all duration-300">
+                        <Users className="h-6 w-6 text-green-600 dark:text-green-400" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-bold text-gray-900 dark:text-white text-lg">
+                          {bookingData.numberOfTravelers} {bookingData.numberOfTravelers === 1 ? 'Person' : 'People'}
                         </p>
-                        <p className="text-sm text-green-700 dark:text-green-200">
-                          Your payment is processed securely through PayHere payment gateway.
+                        <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                          Travelers
                         </p>
                       </div>
                     </div>
                   </div>
+
+                  {/* Price Breakdown */}
+                  <div className="glass-card-subtle p-6 space-y-4">
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center space-x-2">
+                      <div className="w-6 h-6 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg"></div>
+                      <span>Price Breakdown</span>
+                    </h4>
+                    
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center p-3 bg-white/5 rounded-lg">
+                        <span className="text-gray-600 dark:text-gray-400 font-medium">
+                          Price per person:
+                        </span>
+                        <span className="font-bold text-gray-900 dark:text-white">
+                          {formatCurrency(getTotalAmount() / bookingData.numberOfTravelers)}
+                        </span>
+                      </div>
+                      
+                      <div className="flex justify-between items-center p-3 bg-white/5 rounded-lg">
+                        <span className="text-gray-600 dark:text-gray-400 font-medium">
+                          Number of travelers:
+                        </span>
+                        <span className="font-bold text-gray-900 dark:text-white">
+                          {bookingData.numberOfTravelers}
+                        </span>
+                      </div>
+                      
+                      <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                        <div className="flex justify-between items-center p-4 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 rounded-lg border border-primary-200 dark:border-primary-700">
+                          <span className="text-xl font-bold text-gray-900 dark:text-white">Total:</span>
+                          <span className="text-2xl font-black text-transparent bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text">
+                            {formatCurrency(getTotalAmount())}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Payment Security Info */}
+                  <div className="glass-card-subtle p-6 bg-gradient-to-r from-green-50/50 to-emerald-50/50 dark:from-green-900/20 dark:to-emerald-900/20 border border-green-200 dark:border-green-700">
+                    <div className="flex items-start space-x-3">
+                      <div className="p-2 bg-green-500/20 rounded-lg">
+                        <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400" />
+                      </div>
+                      <div>
+                        <p className="text-lg font-bold text-green-900 dark:text-green-100 mb-2">
+                          Secure Payment
+                        </p>
+                        <p className="text-sm text-green-700 dark:text-green-200 leading-relaxed">
+                          Your payment is processed securely through PayHere payment gateway with industry-standard encryption.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center py-12">
+                  <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <MapPin className="h-8 w-8 text-gray-400" />
+                  </div>
+                  <p className="text-gray-500 dark:text-gray-400 font-medium">
+                    Select a destination to view booking summary
+                  </p>
                 </div>
               )}
             </div>
