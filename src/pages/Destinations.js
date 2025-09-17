@@ -149,65 +149,103 @@ const Destinations = () => {
         </div>
       </section>
 
-      {/* Search and Filter Section */}
-      <section className="py-8 bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+      {/* Enhanced Search and Filter Section */}
+      <section className="py-12 bg-gradient-to-b from-white/90 to-gray-50/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm border-b dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-            {/* Search Bar */}
-            <div className="flex-1 max-w-md">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search destinations..."
-                  value={searchQuery}
-                  onChange={handleSearchChange}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                />
+          <div className="glass-card p-8 space-y-8">
+            {/* Search Bar Section */}
+            <div className="text-center">
+              <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-6">
+                Find Your Perfect Destination
+              </h2>
+              <div className="max-w-2xl mx-auto">
+                <div className="relative group">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-6 w-6 text-gray-400 group-focus-within:text-primary-500 transition-colors duration-300" />
+                  <input
+                    type="text"
+                    placeholder="Search destinations, activities, or experiences..."
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    className="form-input-glass w-full pl-12 pr-4 py-4 text-lg focus-visible-modern border-gray-300 dark:border-gray-600"
+                  />
+                  <div className="input-glow-effect"></div>
+                </div>
               </div>
             </div>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category.value}
-                  onClick={() => handleCategoryChange(category.value)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-colors duration-200 ${
-                    selectedCategory === category.value
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
-                  }`}
-                >
-                  {category.label}
-                </button>
-              ))}
+            {/* Category Filters */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white text-center">
+                Browse by Category
+              </h3>
+              <div className="flex flex-wrap justify-center gap-3">
+                {categories.map((category, index) => (
+                  <button
+                    key={category.value}
+                    onClick={() => handleCategoryChange(category.value)}
+                    className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 focus-visible-modern animate-staggered-fade-in ${
+                      selectedCategory === category.value
+                        ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg hover-glow-purple'
+                        : 'glass-card-subtle text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-gray-800/30'
+                    }`}
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    {category.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            {/* View Mode Toggle */}
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => setViewMode('grid')}
-                className={`p-2 rounded-lg transition-colors duration-200 ${
-                  viewMode === 'grid'
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
-                }`}
-                aria-label="Grid view"
-              >
-                <Grid className="h-5 w-5" />
-              </button>
-              <button
-                onClick={() => setViewMode('list')}
-                className={`p-2 rounded-lg transition-colors duration-200 ${
-                  viewMode === 'list'
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
-                }`}
-                aria-label="List view"
-              >
-                <List className="h-5 w-5" />
-              </button>
+            {/* View Controls and Results Info */}
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-gray-200/30 dark:border-gray-700/30">
+              {/* Results Count */}
+              <div className="text-gray-600 dark:text-gray-400">
+                {filteredDestinations.length > 0 ? (
+                  <span className="font-medium">
+                    Showing {startIndex + 1}-{Math.min(endIndex, filteredDestinations.length)} of{' '}
+                    <span className="text-primary-600 dark:text-primary-400 font-bold">
+                      {filteredDestinations.length}
+                    </span>{' '}
+                    destinations
+                    {searchQuery && (
+                      <span className="ml-2">
+                        for "<span className="text-primary-600 dark:text-primary-400 font-bold">{searchQuery}</span>"
+                      </span>
+                    )}
+                  </span>
+                ) : (
+                  <span className="font-medium">No destinations found</span>
+                )}
+              </div>
+
+              {/* View Mode Toggle */}
+              <div className="flex items-center space-x-3">
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">View:</span>
+                <div className="flex items-center space-x-2 p-1 bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm rounded-xl">
+                  <button
+                    onClick={() => setViewMode('grid')}
+                    className={`p-3 rounded-xl transition-all duration-300 focus-visible-modern ${
+                      viewMode === 'grid'
+                        ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg'
+                        : 'text-gray-600 dark:text-gray-400 hover:bg-white/20 dark:hover:bg-gray-700/30'
+                    }`}
+                    aria-label="Grid view"
+                  >
+                    <Grid className="h-5 w-5" />
+                  </button>
+                  <button
+                    onClick={() => setViewMode('list')}
+                    className={`p-3 rounded-xl transition-all duration-300 focus-visible-modern ${
+                      viewMode === 'list'
+                        ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg'
+                        : 'text-gray-600 dark:text-gray-400 hover:bg-white/20 dark:hover:bg-gray-700/30'
+                    }`}
+                    aria-label="List view"
+                  >
+                    <List className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
