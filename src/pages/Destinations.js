@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Search, Filter, Grid, List, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, Filter, Grid, List, ChevronLeft, ChevronRight, ArrowUpDown, Star, MapPin, DollarSign } from 'lucide-react';
 import DestinationCard from '../components/DestinationCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { destinations, categories, searchDestinations, getDestinationsByCategory } from '../data/destinations';
@@ -14,10 +14,20 @@ const Destinations = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
+  const [sortBy, setSortBy] = useState('name'); // 'name', 'price', 'rating', 'popular'
+  const [sortOrder, setSortOrder] = useState('asc'); // 'asc' or 'desc'
   const [isLoading, setIsLoading] = useState(true);
   const [filteredDestinations, setFilteredDestinations] = useState([]);
 
   const destinationsPerPage = 9;
+
+  // Sorting options
+  const sortOptions = [
+    { value: 'name', label: 'Name', icon: ArrowUpDown },
+    { value: 'price', label: 'Price', icon: DollarSign },
+    { value: 'rating', label: 'Rating', icon: Star },
+    { value: 'popular', label: 'Popularity', icon: MapPin }
+  ];
 
   // Debounced search function
   const debouncedSearch = useMemo(
