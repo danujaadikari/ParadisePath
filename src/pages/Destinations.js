@@ -235,54 +235,92 @@ const Destinations = () => {
               </div>
             </div>
 
-            {/* View Controls and Results Info */}
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-gray-200/30 dark:border-gray-700/30">
-              {/* Results Count */}
-              <div className="text-gray-600 dark:text-gray-400">
-                {filteredDestinations.length > 0 ? (
-                  <span className="font-medium">
-                    Showing {startIndex + 1}-{Math.min(endIndex, filteredDestinations.length)} of{' '}
-                    <span className="text-primary-600 dark:text-primary-400 font-bold">
-                      {filteredDestinations.length}
-                    </span>{' '}
-                    destinations
-                    {searchQuery && (
-                      <span className="ml-2">
-                        for "<span className="text-primary-600 dark:text-primary-400 font-bold">{searchQuery}</span>"
-                      </span>
-                    )}
-                  </span>
-                ) : (
-                  <span className="font-medium">No destinations found</span>
-                )}
+            {/* Sorting and View Controls */}
+            <div className="flex flex-col lg:flex-row justify-between items-center gap-6 pt-6 border-t border-gray-200/30 dark:border-gray-700/30">
+              {/* Sorting Controls */}
+              <div className="flex flex-wrap items-center gap-4">
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Sort by:</span>
+                <div className="flex flex-wrap gap-2">
+                  {sortOptions.map((option) => {
+                    const Icon = option.icon;
+                    return (
+                      <button
+                        key={option.value}
+                        onClick={() => {
+                          if (sortBy === option.value) {
+                            setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+                          } else {
+                            setSortBy(option.value);
+                            setSortOrder('asc');
+                          }
+                        }}
+                        className={`flex items-center space-x-2 px-4 py-2 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 focus-visible-modern ${
+                          sortBy === option.value
+                            ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg'
+                            : 'glass-card-subtle text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-gray-800/30'
+                        }`}
+                      >
+                        <Icon className="h-4 w-4" />
+                        <span>{option.label}</span>
+                        {sortBy === option.value && (
+                          <span className="text-xs">
+                            {sortOrder === 'asc' ? '↑' : '↓'}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
-              {/* View Mode Toggle */}
-              <div className="flex items-center space-x-3">
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">View:</span>
-                <div className="flex items-center space-x-2 p-1 bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm rounded-xl">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`p-3 rounded-xl transition-all duration-300 focus-visible-modern ${
-                      viewMode === 'grid'
-                        ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg'
-                        : 'text-gray-600 dark:text-gray-400 hover:bg-white/20 dark:hover:bg-gray-700/30'
-                    }`}
-                    aria-label="Grid view"
-                  >
-                    <Grid className="h-5 w-5" />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={`p-3 rounded-xl transition-all duration-300 focus-visible-modern ${
-                      viewMode === 'list'
-                        ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg'
-                        : 'text-gray-600 dark:text-gray-400 hover:bg-white/20 dark:hover:bg-gray-700/30'
-                    }`}
-                    aria-label="List view"
-                  >
-                    <List className="h-5 w-5" />
-                  </button>
+              {/* Results and View Controls */}
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                {/* Results Count */}
+                <div className="text-gray-600 dark:text-gray-400 text-sm">
+                  {filteredDestinations.length > 0 ? (
+                    <span className="font-medium">
+                      {startIndex + 1}-{Math.min(endIndex, filteredDestinations.length)} of{' '}
+                      <span className="text-primary-600 dark:text-primary-400 font-bold">
+                        {filteredDestinations.length}
+                      </span>
+                      {searchQuery && (
+                        <span className="ml-1">
+                          for "<span className="text-primary-600 dark:text-primary-400 font-bold">{searchQuery}</span>"
+                        </span>
+                      )}
+                    </span>
+                  ) : (
+                    <span className="font-medium">No destinations found</span>
+                  )}
+                </div>
+
+                {/* View Mode Toggle */}
+                <div className="flex items-center space-x-3">
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">View:</span>
+                  <div className="flex items-center space-x-2 p-1 bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm rounded-xl">
+                    <button
+                      onClick={() => setViewMode('grid')}
+                      className={`p-3 rounded-xl transition-all duration-300 focus-visible-modern ${
+                        viewMode === 'grid'
+                          ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg'
+                          : 'text-gray-600 dark:text-gray-400 hover:bg-white/20 dark:hover:bg-gray-700/30'
+                      }`}
+                      aria-label="Grid view"
+                    >
+                      <Grid className="h-5 w-5" />
+                    </button>
+                    <button
+                      onClick={() => setViewMode('list')}
+                      className={`p-3 rounded-xl transition-all duration-300 focus-visible-modern ${
+                        viewMode === 'list'
+                          ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg'
+                          : 'text-gray-600 dark:text-gray-400 hover:bg-white/20 dark:hover:bg-gray-700/30'
+                      }`}
+                      aria-label="List view"
+                    >
+                      <List className="h-5 w-5" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
