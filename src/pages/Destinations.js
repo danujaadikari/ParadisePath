@@ -387,41 +387,51 @@ const Destinations = () => {
             </div>
           )}
 
-          {/* Pagination */}
+          {/* Enhanced Pagination */}
           {totalPages > 1 && (
-            <div className="mt-12 flex justify-center">
-              <nav className="flex items-center space-x-2">
-                <button
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  disabled={currentPage === 1}
-                  className="p-2 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
-                  aria-label="Previous page"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-
-                {generatePageNumbers().map((page) => (
+            <div className="mt-16 flex justify-center">
+              <nav className="glass-card p-2" aria-label="Pagination">
+                <div className="flex items-center space-x-2">
                   <button
-                    key={page}
-                    onClick={() => handlePageChange(page)}
-                    className={`px-4 py-2 rounded-lg font-medium transition-colors duration-200 ${
-                      currentPage === page
-                        ? 'bg-primary-600 text-white'
-                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
-                    }`}
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className="p-3 rounded-xl border border-gray-300/20 dark:border-gray-600/20 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:scale-105 focus-visible-modern disabled:hover:scale-100"
+                    aria-label="Previous page"
                   >
-                    {page}
+                    <ChevronLeft className="h-5 w-5" />
                   </button>
-                ))}
 
-                <button
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage === totalPages}
-                  className="p-2 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
-                  aria-label="Next page"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
+                  <div className="flex items-center space-x-1">
+                    {generatePageNumbers().map((page) => (
+                      <button
+                        key={page}
+                        onClick={() => handlePageChange(page)}
+                        className={`px-4 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 focus-visible-modern ${
+                          currentPage === page
+                            ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg hover-glow-purple'
+                            : 'text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20'
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className="p-3 rounded-xl border border-gray-300/20 dark:border-gray-600/20 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:scale-105 focus-visible-modern disabled:hover:scale-100"
+                    aria-label="Next page"
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </div>
+                
+                {/* Page Info */}
+                <div className="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
+                  Page <span className="font-semibold text-primary-600 dark:text-primary-400">{currentPage}</span> of{' '}
+                  <span className="font-semibold text-primary-600 dark:text-primary-400">{totalPages}</span>
+                </div>
               </nav>
             </div>
           )}
