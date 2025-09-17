@@ -104,16 +104,48 @@ const Destinations = () => {
 
   return (
     <div className="min-h-screen pt-16 bg-gray-50 dark:bg-gray-900">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-secondary-600 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Explore Amazing Destinations
-          </h1>
-          <p className="text-xl text-green-100 max-w-3xl mx-auto">
-            Discover breathtaking locations around the world and find your perfect getaway.
-            From pristine beaches to majestic mountains, adventure awaits!
-          </p>
+      {/* Enhanced Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-purple-600 to-secondary-600 py-20">
+        {/* Floating Particles */}
+        <div className="absolute inset-0">
+          <div className="floating-particles">
+            <div className="particle particle-1"></div>
+            <div className="particle particle-2"></div>
+            <div className="particle particle-3"></div>
+            <div className="particle particle-4"></div>
+            <div className="particle particle-5"></div>
+          </div>
+        </div>
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-black/20"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="glass-card-subtle p-8 max-w-5xl mx-auto backdrop-blur-sm">
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-6 text-shimmer">
+              Discover Paradise
+            </h1>
+            <p className="text-xl md:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed mb-8">
+              Explore breathtaking destinations around the world and find your perfect getaway.
+              From pristine beaches to majestic mountains, adventure awaits!
+            </p>
+            
+            {/* Stats Section */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              <div className="glass-card-subtle p-6 backdrop-blur-sm">
+                <h3 className="text-3xl font-black text-white mb-2">{destinations.length}+</h3>
+                <p className="text-green-100">Amazing Destinations</p>
+              </div>
+              <div className="glass-card-subtle p-6 backdrop-blur-sm">
+                <h3 className="text-3xl font-black text-white mb-2">50+</h3>
+                <p className="text-green-100">Countries Covered</p>
+              </div>
+              <div className="glass-card-subtle p-6 backdrop-blur-sm">
+                <h3 className="text-3xl font-black text-white mb-2">1000+</h3>
+                <p className="text-green-100">Happy Travelers</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
