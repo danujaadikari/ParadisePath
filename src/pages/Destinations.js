@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Search, Filter, Grid, List, ChevronLeft, ChevronRight, ArrowUpDown, Star, MapPin, DollarSign } from 'lucide-react';
+import { Search, Filter, Grid, List, ChevronLeft, ChevronRight, ArrowUpDown, Star, MapPin, DollarSign, Loader2 } from 'lucide-react';
 import DestinationCard from '../components/DestinationCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { destinations, categories, searchDestinations, getDestinationsByCategory } from '../data/destinations';
@@ -109,7 +109,10 @@ const Destinations = () => {
   };
 
   const handlePageChange = (page) => {
+    if (page === '...' || page === currentPage || page < 1 || page > totalPages) return;
+    
     setCurrentPage(page);
+    // Smooth scroll to top of results
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -402,18 +405,24 @@ const Destinations = () => {
                   </button>
 
                   <div className="flex items-center space-x-1">
-                    {generatePageNumbers().map((page) => (
-                      <button
-                        key={page}
-                        onClick={() => handlePageChange(page)}
-                        className={`px-4 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 focus-visible-modern ${
-                          currentPage === page
-                            ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg hover-glow-purple'
-                            : 'text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20'
-                        }`}
-                      >
-                        {page}
-                      </button>
+                    {generatePageNumbers().map((page, index) => (
+                      page === '...' ? (
+                        <span key={`dots-${index}`} className="px-2 py-3 text-gray-500 dark:text-gray-400">
+                          ...
+                        </span>
+                      ) : (
+                        <button
+                          key={page}
+                          onClick={() => handlePageChange(page)}
+                          className={`px-4 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 focus-visible-modern ${
+                            currentPage === page
+                              ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg hover-glow-purple'
+                              : 'text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20'
+                          }`}
+                        >
+                          {page}
+                        </button>
+                      )
                     ))}
                   </div>
 
