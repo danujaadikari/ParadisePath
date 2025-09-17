@@ -29,7 +29,7 @@ const Destinations = () => {
     { value: 'popular', label: 'Popularity', icon: MapPin }
   ];
 
-  // Debounced search function
+  // Debounced search function with sorting
   const debouncedSearch = useMemo(
     () => debounce((query) => {
       let results = destinations;
@@ -42,10 +42,39 @@ const Destinations = () => {
         results = results.filter(dest => dest.category === selectedCategory);
       }
       
+      // Apply sorting
+      results = [...results].sort((a, b) => {
+        let aValue, bValue;
+        
+        switch (sortBy) {
+          case 'price':
+            aValue = a.price;
+            bValue = b.price;
+            break;
+          case 'rating':
+            aValue = a.rating || 0;
+            bValue = b.rating || 0;
+            break;
+          case 'popular':
+            aValue = a.popular || 0;
+            bValue = b.popular || 0;
+            break;
+          default: // name
+            aValue = a.name.toLowerCase();
+            bValue = b.name.toLowerCase();
+        }
+        
+        if (sortOrder === 'asc') {
+          return aValue > bValue ? 1 : -1;
+        } else {
+          return aValue < bValue ? 1 : -1;
+        }
+      });
+      
       setFilteredDestinations(results);
       setCurrentPage(1); // Reset to first page when filtering
     }, 300),
-    [selectedCategory]
+    [selectedCategory, sortBy, sortOrder]
   );
 
   // Initial load
@@ -63,7 +92,7 @@ const Destinations = () => {
     if (!isLoading) {
       debouncedSearch(searchQuery);
     }
-  }, [searchQuery, selectedCategory, debouncedSearch, isLoading]);
+  }, [searchQuery, selectedCategory, sortBy, sortOrder, debouncedSearch, isLoading]);
 
   // Pagination logic
   const totalPages = Math.ceil(filteredDestinations.length / destinationsPerPage);
