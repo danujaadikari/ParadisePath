@@ -48,9 +48,9 @@ const DestinationCard = ({ destination, className = '' }) => {
   };
 
   return (
-    <div className="card-enhanced group hover-lift-rotate overflow-hidden animate-staggered-fade-in">
-      {/* Image Container with enhanced loading state */}
-      <div className="relative h-64 bg-gradient-to-br from-green-200 to-emerald-200 dark:from-gray-700 dark:to-gray-800 overflow-hidden">
+    <div className="card-enhanced group hover-lift-rotate overflow-hidden animate-staggered-fade-in hover:shadow-2xl transition-all duration-500">
+      {/* Image Container with stunning hover effects */}
+      <div className="relative h-64 bg-gradient-to-br from-green-200 to-emerald-200 dark:from-gray-700 dark:to-gray-800 overflow-hidden group-hover:shadow-inner">
         {!imageLoaded && !imageError && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="modern-spinner"></div>
@@ -61,7 +61,7 @@ const DestinationCard = ({ destination, className = '' }) => {
           <img
             src={destination.image}
             alt={destination.name}
-            className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${
+            className={`w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-125 group-hover:rotate-2 group-hover:brightness-110 group-hover:contrast-110 group-hover:saturate-110 ${
               imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
             onLoad={handleImageLoad}
@@ -73,14 +73,32 @@ const DestinationCard = ({ destination, className = '' }) => {
           </div>
         )}
 
-        {/* Enhanced overlay gradient with micro-interactions */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-40 group-hover:opacity-70 transition-all duration-500"></div>
+        {/* Dynamic animated overlay with multiple gradients */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-30 group-hover:opacity-0 transition-all duration-700"></div>
+        
+        {/* Magical shimmer overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 translate-x-[-100%] group-hover:translate-x-[100%] group-hover:transition-transform group-hover:duration-1500 group-hover:ease-out"></div>
+        
+        {/* Color wash overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-emerald-500/20 group-hover:via-purple-500/15 group-hover:to-pink-500/20 transition-all duration-1000 mix-blend-overlay"></div>
 
-        {/* Floating particles for visual interest */}
+        {/* Enhanced floating particles with staggered animations */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
+          {/* Large floating orbs */}
+          <div className="absolute top-8 left-8 w-6 h-6 bg-gradient-to-r from-yellow-400/70 to-orange-500/70 rounded-full animate-floating-particle blur-sm"></div>
+          <div className="absolute top-16 right-12 w-4 h-4 bg-gradient-to-r from-green-400/80 to-emerald-500/80 rounded-full animate-floating-particle animation-delay-500 blur-sm"></div>
+          <div className="absolute bottom-12 left-12 w-8 h-8 bg-gradient-to-r from-purple-400/60 to-pink-500/60 rounded-full animate-floating-particle animation-delay-1000 blur-sm"></div>
+          <div className="absolute bottom-20 right-8 w-3 h-3 bg-gradient-to-r from-blue-400/90 to-cyan-500/90 rounded-full animate-floating-particle animation-delay-1500 blur-sm"></div>
+          
+          {/* Sparkle effects */}
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/90 rounded-full animate-pulse"></div>
+          <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-yellow-300/80 rounded-full animate-ping"></div>
+          <div className="absolute top-1/2 left-3/4 w-1.5 h-1.5 bg-pink-300/70 rounded-full animate-bounce"></div>
+        </div>
+
+        {/* Animated border glow */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-          <div className="absolute top-6 left-6 w-3 h-3 bg-white/40 rounded-full animate-floating-particle"></div>
-          <div className="absolute top-12 right-8 w-2 h-2 bg-green-400/60 rounded-full animate-floating-particle animation-delay-1000"></div>
-          <div className="absolute bottom-8 left-8 w-4 h-4 bg-purple-400/50 rounded-full animate-floating-particle animation-delay-2000"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent animate-pulse"></div>
         </div>
 
         {/* Featured Badge with enhanced styling */}
