@@ -130,7 +130,7 @@ const Home = () => {
           <div className="max-w-6xl mx-auto">
             <div className="mb-8 animate-staggered-fade-in">
               <span className="inline-block px-6 py-3 glass-modern rounded-full text-green-300 text-sm font-medium mb-6 animate-text-shimmer border border-green-400/30">
-                ✨ Premium Travel Experiences Since 2008
+                ✨ Premium Travel Experiences Since 2025
               </span>
             </div>
             
